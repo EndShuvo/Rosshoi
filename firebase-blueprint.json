@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "AppState": {
+      "title": "AppState",
+      "description": "Key-value store for application state",
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "description": "JSON stringified value of the state"
+        }
+      },
+      "required": ["value"]
+    },
+    "Comment": {
+      "title": "Comment",
+      "description": "Customer comment on a product",
+      "type": "object",
+      "properties": {
+        "productId": { "type": "number" },
+        "userName": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "comment": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "status": { "type": "string", "enum": ["Pending", "Approved"] }
+      },
+      "required": ["productId", "userName", "userEmail", "comment", "date", "status"]
+    }
+  },
+  "firestore": {
+    "/app_state/{key}": {
+      "schema": {
+        "$ref": "#/entities/AppState"
+      },
+      "description": "Stores application state like products, orders, etc."
+    },
+    "/comments/{commentId}": {
+      "schema": {
+        "$ref": "#/entities/Comment"
+      },
+      "description": "Stores customer comments on products"
+    }
+  }
+}
