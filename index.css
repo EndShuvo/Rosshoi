@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-bengali: "Hind Siliguri", sans-serif;
+  --color-premium-charcoal: #1a1a1a;
+  --color-premium-gold: #d4af37;
+  --color-premium-white: #ffffff;
+  --color-premium-cream: #EBE5DA;
+}
+
+/* Force class-based dark mode for Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    @apply bg-premium-cream dark:bg-premium-charcoal text-premium-charcoal dark:text-gray-100 font-sans;
+  }
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #f1d592 50%, #d4af37 100%);
+}
+
+.charcoal-gradient {
+  background: linear-gradient(135deg, #0f0f0f 0%, #2a2a2a 100%);
+}
