@@ -1,0 +1,16 @@
+{
+  "name": "রশশোই",
+  "short_name": "রশশোই",
+  "description": "রশশোই অ্যাপ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f4ef",
+  "theme_color": "#ed1c24",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
